@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-news-card',
-  imports: [],
+  standalone: true,
   templateUrl: './news-card.component.html',
-  styleUrl: './news-card.component.css'
+  styleUrls: ['./news-card.component.css']
 })
 export class NewsCardComponent {
-
+  @Input() anime!: { title: string; description: string; image: string };
 }

@@ -1,0 +1,80 @@
+/* Estilização do Header */
+header {
+    background-color: #1e1e1e; /* Fundo escuro */
+    padding: 15px 20px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcc00; /* Amarelo anime */
+    text-decoration: none;
+  }
+  
+  /* Estilização do Menu */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav ul li a:hover {
+    color: #ffcc00; /* Destaque ao passar o mouse */
+  }
+  
+  /* Botão */
+  button {
+    background-color: #ffcc00;
+    color: #1e1e1e;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #e6b800; /* Tom mais escuro no hover */
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  
+    button {
+      margin-top: 10px;
+    }
+  }
+  

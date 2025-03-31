@@ -1,1 +1,51 @@
-<p>news-section works!</p>
+<div class="site-wrapper">
+  <!-- Seção Hero -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <img src="./assets/wp2.jpg" alt="Anime Background" class="hero-bg-image">
+      <div class="hero-overlay"></div>
+      
+      <div class="hero-text">
+        <h1 class="main-title">Recap Animes</h1>
+        <p class="subtitle">As últimas novidades sobre animes, mangás e eventos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtros de Categorias -->
+  <nav class="category-filters">
+    <div class="filter-buttons">
+      <button *ngFor="let category of ['all', 'anime', 'manga', 'event']" 
+              (click)="filterCategory(category)"
+              [class.active]="isActiveCategory(category)"
+              class="filter-btn">
+        {{ getCategoryName(category) }}
+      </button>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="content-section">
+    <div class="news-grid">
+      <article *ngFor="let news of filteredNews" class="news-card">
+        <div class="card-image-wrapper">
+          <img [src]="news.image" [alt]="news.title + ' thumbnail'" class="card-image">
+        </div>
+        
+        <div class="card-body">
+          <h3 class="news-title">{{ news.title }}</h3>
+          <p class="news-excerpt">{{ truncateText(news.description, 150) }}</p>
+          
+          <div class="card-footer">
+            <a [href]="news.link" class="read-more-btn" target="_blank" rel="noopener">
+              Leia mais
+              <svg class="arrow-icon" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</div>
